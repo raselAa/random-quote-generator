@@ -14,34 +14,34 @@ project 1 - A Random Quote Generator
 //creating Array object
 let quotes = [{
 
-    quoto: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
     source: 'Nelson Mandela',
 
 },
 {
 
-    quoto: " Tell me and I forget. Teach me and I remember. Involve me and I learn.",
+    quote: " Tell me and I forget. Teach me and I remember. Involve me and I learn.",
     source: 'Benjamin Franklin',
 
 
 },
 {
 
-    quoto: " Life is either a daring adventure or nothing at all. ",
+    quote: " Life is either a daring adventure or nothing at all. ",
     source: 'Helen Keller',
 
 
 },
 {
 
-    quoto: "Only a life lived for others is a life worthwhile. ",
+    quote: "Only a life lived for others is a life worthwhile. ",
     source: 'Albert Einstein',
 
 
 },
 {
 
-    quoto: " There's no crying in baseball!",
+    quote: " There's no crying in baseball!",
     source: 'Jimmy Dugan',
     citation: "A League of Their Own",
     year: 1992,
@@ -81,21 +81,21 @@ function getRandomColor() {
 function printQuote() {
     let getRan = getRandomQuote();
 
-    let ranQuoto = `<p class = "quote"> ${getRan.quoto}</p> <p class = "source"> ${getRan.source}`;
-    if (getRan.hasOwnProperty('citation')) {
-        ranQuoto += `<span class="citation">${getRan.citation}</span>`;
+    let ranquote = `<p class = "quote"> ${getRan.quote}</p> <p class = "source"> ${getRan.source}`;
+    if (getRan.citation) {
+        ranquote += `<span class="citation">${getRan.citation}</span>`;
     }
-    if (getRan.hasOwnProperty('year')) {
-        ranQuoto += `<span class="year">${getRan.year}</span>`;
-    }
-
-    if (getRan.hasOwnProperty('tag')) {
-        ranQuoto += `, <span class="tag">${getRan.tag}</span>`;
+    if (getRan.year) {
+        ranquote += `<span class="year">${getRan.year}</span>`;
     }
 
-    ranQuoto += `</p>`;
+    if (getRan.tag) {
+        ranquote += `, <span class="tag">${getRan.tag}</span>`;
+    }
 
-    document.getElementById('quote-box').innerHTML = ranQuoto;
+    ranquote += `</p>`;
+
+    document.getElementById('quote-box').innerHTML = ranquote;
     document.body.style.backgroundColor = getRandomColor();
 
 
